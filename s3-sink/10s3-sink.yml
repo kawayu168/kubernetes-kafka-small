@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: s3-sink-test
+  namespace: kafka
+spec:
+  containers:
+  - name: s3-sink-test
+    image: kawayu168/kafka-s3-sink:latest
+    env:
+    - name: BOOTSTRAP_SERVERS
+      value: "broker:9092"
+    - name: KAFKA_TOPICS
+      value: "test"
+    - name: S3_BUCKET
+      value: ""
+    - name: S3_PREFIX
+      value: ""
+    - name: AWS_ACCESS_KEY_ID
+      value: ""
+    - name: AWS_SECRET_ACCESS_KEY
+      value: ""
